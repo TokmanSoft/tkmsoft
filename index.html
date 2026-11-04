@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TKM Soft | Game Studio & Software Engineering</title>
+  <meta
+    name="description"
+    content="Official website of TKM Soft and Burkan Emre Tokman. Home of WordMind and high-performance Android games and engineering devlogs."
+  />
+  <style>
+    :root {
+      --bg: #0A0F1D;
+      --card-bg: #111827;
+      --card-border: #1F2937;
+      --text-main: #F9FAFB;
+      --text-muted: #9CA3AF;
+      --accent-gold: #F59E0B;
+      --accent-glow: rgba(245, 158, 11, 0.15);
+      --emerald: #10B981;
+      --accent-blue: #3B82F6;
+      --container-width: 1100px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text-main);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Ambient background glow */
+    .bg-glow {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(245, 158, 11, 0.08) 0%, rgba(10, 15, 29, 0) 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      max-width: var(--container-width);
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Header */
+    header {
+      padding: 24px 0;
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #FFFFFF;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .logo span {
+      color: var(--accent-gold);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent-gold);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 80px 0 60px;
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 6px 16px;
+      border-radius: 9999px;
+      background: var(--accent-glow);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      color: var(--accent-gold);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      max-width: 640px;
+      margin: 0 auto 36px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 28px;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+      color: #0A0F1D;
+      box-shadow: 0 4px 20px rgba(245, 158, 11, 0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(245, 158, 11, 0.45);
+    }
+
+    .btn-secondary {
+      background: var(--card-bg);
+      color: var(--text-main);
+      border: 1px solid var(--card-border);
+    }
+
+    .btn-secondary:hover {
+      background: #1F2937;
+      border-color: #374151;
+    }
+
+    /* Section Headers */
+    .section-header {
+      margin-bottom: 40px;
+    }
+
+    .section-header h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
+
+    .section-header p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+
+    /* Showcase Card (WordMind) */
+    .showcase {
+      padding: 60px 0;
+    }
+
+    .app-card {
+      background: linear-gradient(180deg, #111827 0%, #0F172A 100%);
+      border: 1px solid var(--card-border);
+      border-radius: 24px;
+      padding: 48px;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 48px;
+      align-items: center;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .app-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(245, 158, 11, 0.05) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .app-preview-box {
+      background: #0A0F1D;
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 32px;
+      text-align: center;
+      box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.4);
+    }
+
+    .app-icon-placeholder {
+      width: 100px;
+      height: 100px;
+      margin: 0 auto 20px;
+      background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
+      border: 2px solid var(--accent-gold);
+      border-radius: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      box-shadow: 0 8px 24px rgba(245, 158, 11, 0.2);
+    }
+
+    .app-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.85rem;
+      color: var(--emerald);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .app-status::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--emerald);
+      box-shadow: 0 0 8px var(--emerald);
+    }
+
+    .app-info h3 {
+      font-size: 2.2rem;
+      margin-bottom: 8px;
+      color: #FFFFFF;
+    }
+
+    .app-tagline {
+      color: var(--accent-gold);
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-bottom: 16px;
+    }
+
+    .app-desc {
+      color: var(--text-muted);
+      margin-bottom: 24px;
+      font-size: 1rem;
+    }
+
+    .feature-list {
+      list-style: none;
+      margin-bottom: 32px;
+    }
+
+    .feature-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+      font-size: 0.95rem;
+      color: #D1D5DB;
+    }
+
+    .feature-list li::before {
+      content: "✦";
+      color: var(--accent-gold);
+    }
+
+    .app-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .app-links .legal-link {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .app-links .legal-link:hover {
+      color: var(--accent-gold);
+    }
+
+    /* DevLog / Articles Section */
+    .devlog {
+      padding: 60px 0;
+    }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+    }
+
+    .blog-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 18px;
+      padding: 28px;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(245, 158, 11, 0.4);
+    }
+
+    .blog-meta {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .blog-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 12px;
+      line-height: 1.35;
+      color: #FFFFFF;
+    }
+
+    .blog-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+
+    .read-more {
+      color: var(--accent-gold);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* About Section */
+    .about {
+      padding: 60px 0 80px;
+    }
+
+    .about-box {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 24px;
+      padding: 40px;
+    }
+
+    .about-box h2 {
+      font-size: 1.8rem;
+      margin-bottom: 16px;
+    }
+
+    .about-box p {
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      font-size: 1.05rem;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--card-border);
+      padding: 40px 0;
+      background: #070B16;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent-gold);
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 860px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      .app-card {
+        grid-template-columns: 1fr;
+        padding: 32px;
+        gap: 32px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-glow"></div>
+
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav>
+        <a href="index.html" class="logo">
+          TKM<span>SOFT</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="#apps">Games</a></li>
+          <li><a href="#devlog">DevLog</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <span class="badge">Independent Game & Software Studio</span>
+        <h1>Crafting Immersive Android Games & High-Performance Experiences</h1>
+        <p>
+          Founded by Burkan Emre Tokman. Focusing on retention-first mobile gameplay, responsive game feel, and zero-compromise engineering.
+        </p>
+        <div class="hero-actions">
+          <a href="#apps" class="btn btn-primary">Discover WordMind</a>
+          <a href="#devlog" class="btn btn-secondary">Read Engineering Insights</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Apps Section -->
+    <section id="apps" class="showcase">
+      <div class="container">
+        <div class="section-header">
+          <h2>Featured Releases</h2>
+          <p>Hand-crafted mobile experiences powered by modern architecture.</p>
+        </div>
+
+        <div class="app-card">
+          <div class="app-preview-box">
+            <div class="app-icon-placeholder">🧠</div>
+            <div class="app-status">Available on Google Play</div>
+            <h4>WordMind</h4>
+            <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 4px;">v2.2.2 (Target SDK 36)</p>
+          </div>
+
+          <div class="app-info">
+            <h3>WordMind</h3>
+            <div class="app-tagline">3D Soft Glossy Luxury Crossword & Brain Challenge</div>
+            <p class="app-desc">
+              WordMind blends elegant obsidian-glass aesthetics with rewarding crossword mechanics. Designed with low-latency touch feedback, progressive difficulty, and deep card-album collection systems.
+            </p>
+            <ul class="feature-list">
+              <li>Soft Glossy 3D visual language with 24K gold highlights</li>
+              <li>100% Local-first data architecture (instant offline play)</li>
+              <li>Zero banner clutter: purely optional rewarded gameplay boosts</li>
+              <li>Full 16 KB page size & Android Vitals performance optimization</li>
+            </ul>
+            <div class="app-links">
+              <a href="https://play.google.com/store/apps/details?id=com.tkmsoft.crosswordpuzzle" target="_blank" rel="noopener" class="btn btn-primary">
+                Get on Google Play &rarr;
+              </a>
+              <a href="wordmind-privacy.html" class="legal-link">Privacy Policy</a>
+              <a href="wordmind-terms.html" class="legal-link">Terms of Service</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DevLog / Insights Section -->
+    <section id="devlog" class="devlog">
+      <div class="container">
+        <div class="section-header">
+          <h2>Engineering & Design Insights</h2>
+          <p>Reflections on game feel, mobile monetization, and clean architecture.</p>
+        </div>
+
+        <div class="blog-grid">
+          <div class="blog-card">
+            <div>
+              <div class="blog-meta">Game Feel & Performance</div>
+              <h3>Zero-Latency Haptics & SoundPool in Android Games</h3>
+              <p>Why sub-50ms audio responsiveness and spring physics dictate D1 player retention far more than marketing spend.</p>
+            </div>
+            <span class="read-more">DevLog #01 &rarr;</span>
+          </div>
+
+          <div class="blog-card">
+            <div>
+              <div class="blog-meta">Mobile Economy & Growth</div>
+              <h3>Why We Eliminated Banner Ads in WordMind</h3>
+              <p>A deep dive into why rewarded video integration with cooldown timers delivers higher LTV and protects long-term engagement.</p>
+            </div>
+            <span class="read-more">DevLog #02 &rarr;</span>
+          </div>
+
+          <div class="blog-card">
+            <div>
+              <div class="blog-meta">Architecture & Privacy</div>
+              <h3>Local-First Architecture: Zero Server, Zero Data Liability</h3>
+              <p>How storing game progression strictly on-device simplifies compliance, boosts privacy, and delivers lightning-fast cold starts.</p>
+            </div>
+            <span class="read-more">DevLog #03 &rarr;</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+      <div class="container">
+        <div class="about-box">
+          <h2>About TKM Soft & Philosophy</h2>
+          <p>
+            I'm <strong>Burkan Emre Tokman</strong>, an independent software engineer and game developer. Under the TKM Soft brand, my mission is to build digital products that respect the user’s time, attention, and privacy.
+          </p>
+          <p>
+            Every project begins with a <em>retention-first</em> mindset: no predatory monetization, no aggressive banners, and zero personal data hoarding. The goal is simple — ship clean, performant, and memorable software.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer id="contact">
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <strong>TKM Soft</strong> &bull; Founded by Burkan Emre Tokman
+          <div style="font-size: 0.85rem; margin-top: 4px;">Contact: <a href="mailto:burkanemretokman@gmail.com" style="color: var(--accent-gold); text-decoration: none;">burkanemretokman@gmail.com</a></div>
+        </div>
+        <div class="footer-links">
+          <a href="wordmind-privacy.html">WordMind Privacy</a>
+          <a href="wordmind-terms.html">WordMind Terms</a>
+          <a href="app-ads.txt">app-ads.txt</a>
+        </div>
+      </div>
+      <div style="text-align: center; margin-top: 24px; font-size: 0.8rem; color: #6B7280;">
+        &copy; 2026 TKM Soft. All rights reserved.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
+
