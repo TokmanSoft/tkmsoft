@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marble Myth - Privacy Policy | TKM Soft</title>
+  <meta
+    name="description"
+    content="Official Privacy Policy for Marble Myth: Cyber Shooter by TKM Soft."
+  />
+  <style>
+    :root {
+      --bg: #0A0F1D;
+      --card: #111827;
+      --text: #F3F4F6;
+      --muted: #9CA3AF;
+      --line: #1F2937;
+      --accent: #06B6D4;
+      --accent-glow: rgba(6, 182, 212, 0.15);
+      --link: #38BDF8;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.75;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .top-nav {
+      margin-bottom: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .top-nav a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .top-nav a:hover {
+      text-decoration: underline;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-top: 0;
+      margin-bottom: 8px;
+      color: #FFFFFF;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    h2 {
+      font-size: 1.25rem;
+      margin-top: 32px;
+      margin-bottom: 12px;
+      color: var(--accent);
+    }
+
+    p, li {
+      color: #D1D5DB;
+      font-size: 1rem;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin-bottom: 16px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    strong {
+      color: #FFFFFF;
+    }
+
+    .highlight-box {
+      background: rgba(6, 182, 212, 0.08);
+      border-left: 4px solid var(--accent);
+      padding: 16px;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        margin: 20px auto;
+        padding: 0 16px;
+      }
+      .card {
+        padding: 24px 16px;
+        border-radius: 14px;
+      }
+      h1 {
+        font-size: 1.65rem;
+      }
+      h2 {
+        font-size: 1.2rem;
+      }
+      p, li {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="top-nav">
+      <a href="projects.html">&larr; Back to Projects</a>
+      <a href="index.html">TKM Soft Home</a>
+    </div>
+
+    <div class="card">
+      <h1>Privacy Policy for Marble Myth: Cyber Shooter</h1>
+      <div class="meta">
+        <strong>Application:</strong> Marble Myth: Cyber Shooter (Package: <code>com.tkmsoft.marble</code>)<br />
+        <strong>Developer:</strong> TKM Soft (Burkan Emre Tokman)<br />
+        <strong>Effective Date:</strong> March 18, 2026 | <strong>Last Updated:</strong> November 2026
+      </div>
+
+      <div class="highlight-box">
+        <strong>Summary:</strong> Marble Myth is an offline-capable mobile game. We do not require accounts, we do not collect personal names, emails, contacts, location, or sensitive information. All game progression is stored locally on your device. Certified third-party SDKs (Google AdMob and Firebase) process anonymized technical telemetry and advertising identifiers strictly to operate, secure, and monetize the game.
+      </div>
+
+      <h2>1. Information We Collect</h2>
+      <p>Marble Myth does not collect personally identifiable information (PII). The application only processes limited technical and diagnostic data through certified Google platform services:</p>
+      <ul>
+        <li><strong>Device Identifiers:</strong> Google Advertising ID (<code>AD_ID</code>) for advertising delivery and measurement.</li>
+        <li><strong>Crash & Performance Telemetry:</strong> Anonymized stack traces, crash logs, and ANR diagnostic metrics via Firebase Crashlytics to resolve stability bugs.</li>
+        <li><strong>Game Analytics:</strong> High-level gameplay progression milestones (e.g., sector reached, game session duration) via Firebase Analytics.</li>
+        <li><strong>Device Specifications:</strong> Device model, operating system version, and screen resolution for rendering optimization.</li>
+      </ul>
+
+      <h2>2. Local Data Storage & Backup</h2>
+      <p>All gameplay progress, completed sectors, unlocked turret chassis, and virtual energy credits are stored strictly on your local device using Android <code>SharedPreferences</code> with local cryptographic verification.</p>
+      <ul>
+        <li><code>android:allowBackup="false"</code> is explicitly configured: Your local game state is not transmitted to or backed up on cloud servers.</li>
+        <li>Uninstalling the game or clearing application storage will permanently reset your local progress.</li>
+      </ul>
+
+      <h2>3. Device Permissions & Purpose</h2>
+      <p>Marble Myth requests only the minimum necessary permissions:</p>
+      <ul>
+        <li><code>android.permission.INTERNET</code>: Required for Google AdMob ad requests and Firebase crash reporting.</li>
+        <li><code>android.permission.ACCESS_NETWORK_STATE</code>: Checks whether internet is active to gracefully handle ad loading.</li>
+        <li><code>android.permission.VIBRATE</code>: Provides tactile haptic feedback during gameplay interactions.</li>
+        <li><code>com.google.android.gms.permission.AD_ID</code>: Enables Google Play Services advertising identifiers in compliance with Google Play policy.</li>
+      </ul>
+      <p>The app <strong>does not</strong> request access to Camera, Microphone, Precise Location, Contacts, Photos, or External Storage.</p>
+
+      <h2>4. Third-Party Services & Privacy Frameworks</h2>
+      <p>The app integrates certified industry-standard SDKs that process data under their respective privacy policies:</p>
+      <ul>
+        <li><strong>Google AdMob:</strong> Serves rewarded video and interstitial ads. <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener" style="color: var(--link);">Google Ads Privacy Policy</a></li>
+        <li><strong>Google User Messaging Platform (UMP):</strong> Manages GDPR, ePrivacy, and CCPA consent in applicable regions.</li>
+        <li><strong>Google Play Services & In-App Review:</strong> Provides core platform functionality and official store rating prompts.</li>
+        <li><strong>Firebase (Analytics, Crashlytics, Remote Config):</strong> Monitors technical stability and game tuning. <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener" style="color: var(--link);">Firebase Privacy</a></li>
+      </ul>
+
+      <h2>5. Advertising Practices & Zero Banner Policy</h2>
+      <p>Marble Myth does not use intrusive banner ads. Advertisements consist of voluntary Rewarded Videos (which players choose to view in exchange for in-game boosts) and occasional interstitial ads shown only after multiple consecutive defeats with strict cooldown periods. Users in the EEA/UK can manage their consent choices anytime through Google's consent dialog.</p>
+
+      <h2>6. Children’s Privacy & Age Rating</h2>
+      <p>Marble Myth is rated <strong>PEGI 3 / ESRB Everyone</strong>. The game contains abstract cyber kinetic action without violence, gambling, or adult themes. We do not knowingly collect personal data from children under 13. If you believe a child has provided us with personal information, please contact us for immediate deletion.</p>
+
+      <h2>7. Data Security & Encryption</h2>
+      <p>All communications between the app and certified Google services are encrypted in transit using industry-standard HTTPS / Transport Layer Security (TLS 1.2+).</p>
+
+      <h2>8. User Rights & Data Deletion Requests</h2>
+      <p>Because Marble Myth does not maintain remote user accounts or store personal data on proprietary servers, deleting local progress is as simple as clearing app storage or uninstalling the app. For inquiries regarding data processing by Google partner services or any privacy-related requests, please contact:</p>
+      <div class="highlight-box">
+        <strong>TKM Soft — Burkan Emre Tokman</strong><br />
+        Email: <a href="mailto:burkanemretokman@gmail.com" style="color: var(--link);">burkanemretokman@gmail.com</a><br />
+        Website: <a href="https://tkmsoft.com" style="color: var(--link);">https://tkmsoft.com</a>
+      </div>
+
+      <h2>9. Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time. Any revisions will be reflected on this page with an updated effective date.</p>
+    </div>
+
+    <footer>
+      &copy; 2026 TKM Soft. All rights reserved. &bull; <a href="marblemyth-terms.html" style="color: var(--muted); text-decoration: none;">Terms of Service</a>
+    </footer>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Visumatch - Privacy Policy | TKM Soft</title>
+  <meta
+    name="description"
+    content="Official Privacy Policy for Visumatch: Memory & Reflex by TKM Soft."
+  />
+  <style>
+    :root {
+      --bg: #0A0F1D;
+      --card: #111827;
+      --text: #F3F4F6;
+      --muted: #9CA3AF;
+      --line: #1F2937;
+      --accent: #10B981;
+      --accent-glow: rgba(16, 185, 129, 0.15);
+      --link: #34D399;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.75;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .top-nav {
+      margin-bottom: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .top-nav a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .top-nav a:hover {
+      text-decoration: underline;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-top: 0;
+      margin-bottom: 8px;
+      color: #FFFFFF;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    h2 {
+      font-size: 1.25rem;
+      margin-top: 32px;
+      margin-bottom: 12px;
+      color: var(--accent);
+    }
+
+    p, li {
+      color: #D1D5DB;
+      font-size: 1rem;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin-bottom: 16px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    strong {
+      color: #FFFFFF;
+    }
+
+    .highlight-box {
+      background: rgba(16, 185, 129, 0.08);
+      border-left: 4px solid var(--accent);
+      padding: 16px;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        margin: 20px auto;
+        padding: 0 16px;
+      }
+      .card {
+        padding: 24px 16px;
+        border-radius: 14px;
+      }
+      h1 {
+        font-size: 1.65rem;
+      }
+      h2 {
+        font-size: 1.2rem;
+      }
+      p, li {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="top-nav">
+      <a href="projects.html">&larr; Back to Projects</a>
+      <a href="index.html">TKM Soft Home</a>
+    </div>
+
+    <div class="card">
+      <h1>Privacy Policy for Visumatch: Memory & Reflex</h1>
+      <div class="meta">
+        <strong>Application:</strong> Visumatch: Memory & Reflex (Package: <code>com.tkmsoft.visumatch</code>)<br />
+        <strong>Developer:</strong> TKM Soft (Burkan Emre Tokman)<br />
+        <strong>Effective Date:</strong> September 2026 | <strong>Last Updated:</strong> November 2026
+      </div>
+
+      <div class="highlight-box">
+        <strong>Summary:</strong> Visumatch combines fast-paced reflex matching with an offline-capable Zen Garden. We do not sell your personal data or collect physical identities. The app uses Google Play Billing for in-app store transactions, Firebase for optional cloud progress sync and leaderboards, and Google AdMob for voluntary rewarded video ads. All communications are strictly encrypted via TLS.
+      </div>
+
+      <h2>1. Information We Collect and Process</h2>
+      <p>Visumatch processes limited technical and account-related data necessary for game progression, leaderboards, and secure transactions:</p>
+      <ul>
+        <li><strong>Account & Cloud Synchronization Data:</strong> When you connect via Firebase Authentication, a unique randomized user identifier is generated to safely store your Zen Garden decorations, unlocked balloon skins, and high scores on Firebase Cloud Firestore.</li>
+        <li><strong>In-App Purchases (Google Play Billing):</strong> Purchase validation tokens and transaction states are processed through the official Google Play In-App Billing library (<code>com.android.vending.BILLING</code>). TKM Soft <strong>never</strong> accesses or stores credit card numbers, billing addresses, or financial credentials.</li>
+        <li><strong>Advertising Identifiers:</strong> Google Advertising ID (<code>AD_ID</code>) is used by Google Mobile Ads to deliver relevant ads and reward you with virtual in-game bonuses upon completion.</li>
+        <li><strong>Crash & Performance Diagnostics:</strong> Anonymized stack traces and performance metrics via Firebase Analytics to monitor stability and prevent ANR (Application Not Responding) events.</li>
+      </ul>
+
+      <h2>2. Device Permissions & How They Are Used</h2>
+      <p>In accordance with Google Play specifications, Visumatch requests only the following permissions:</p>
+      <ul>
+        <li><code>android.permission.INTERNET</code>: Required for Cloud Firestore progress sync, leaderboard updates, and AdMob ad delivery.</li>
+        <li><code>android.permission.VIBRATE</code>: Provides tactile haptic feedback during balloon bursts and combo chains.</li>
+        <li><code>com.android.vending.BILLING</code>: Enables Google Play in-app store purchases for virtual currency and battle pass tiers.</li>
+        <li><code>android.permission.POST_NOTIFICATIONS</code>: Enables optional push notifications through Firebase Cloud Messaging (FCM) to remind you when your Zen Garden reaches its 8-hour harvest cap. You can toggle this permission off at any time in Android system settings.</li>
+      </ul>
+
+      <h2>3. Third-Party Service Providers</h2>
+      <p>Visumatch integrates certified Google services that process data under industry-compliant standards:</p>
+      <ul>
+        <li><strong>Google Play Billing & In-App Review:</strong> Handles secure microtransactions and store ratings.</li>
+        <li><strong>Google Mobile Ads (AdMob) & UMP:</strong> Delivers rewarded video ads and manages GDPR/CCPA consent in applicable regions. <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener" style="color: var(--link);">Google Ad Policies</a></li>
+        <li><strong>Firebase (Auth, Firestore, Analytics, Messaging):</strong> Manages cloud save states, global leaderboards, and notifications. <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener" style="color: var(--link);">Firebase Privacy</a></li>
+      </ul>
+
+      <h2>4. Zero Banner & Respectful Monetization</h2>
+      <p>Visumatch enforces a strict <strong>Zero Banner Policy</strong>. The game never obscures your screen with banners. Advertisements are restricted to voluntary Rewarded Videos (which players deliberately choose to watch for extra coins or boosters) and occasional interstitial ads following game completion cycles.</p>
+
+      <h2>5. Children’s Privacy</h2>
+      <p>Visumatch is rated <strong>PEGI 3 / ESRB Everyone</strong>. The game contains abstract balloon-bursting action and a relaxing garden with zero violence, gambling, or mature content. We do not knowingly collect personal information from children under 13.</p>
+
+      <h2>6. Data Security & Retention</h2>
+      <p>All data transmitted between Visumatch and Google Cloud servers is encrypted in transit using Transport Layer Security (TLS 1.2+). Cloud-synced data is retained for as long as your account remains active.</p>
+
+      <h2>7. User Rights & Data Deletion Requests</h2>
+      <p>In compliance with Google Play Data Safety and global privacy laws (GDPR / CCPA), you have the right to request the complete deletion of your Firebase user account, cloud saves, and leaderboard entries. To request data deletion, email us with your player ID or registered email at:</p>
+      <div class="highlight-box">
+        <strong>TKM Soft — Burkan Emre Tokman</strong><br />
+        Email: <a href="mailto:burkanemretokman@gmail.com" style="color: var(--link);">burkanemretokman@gmail.com</a><br />
+        Website: <a href="https://tkmsoft.com" style="color: var(--link);">https://tkmsoft.com</a>
+      </div>
+
+      <h2>8. Changes to This Privacy Policy</h2>
+      <p>We may update this Privacy Policy from time to time. Any changes will be published directly on this page with an updated effective date.</p>
+    </div>
+
+    <footer>
+      &copy; 2026 TKM Soft. All rights reserved. &bull; <a href="visumatch-terms.html" style="color: var(--muted); text-decoration: none;">Terms of Service</a>
+    </footer>
+  </div>
+</body>
+</html>
+

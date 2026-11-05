@@ -232,10 +232,76 @@
     .app-preview-box {
       background: #0A0F1D;
       border: 1px solid var(--card-border);
-      border-radius: 20px;
-      padding: 32px;
+      border-radius: 24px;
+      padding: 36px 20px 24px;
       text-align: center;
-      box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.4);
+      box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.6);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .device-showcase-wrapper {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+
+    .device-ambient-glow {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 260px;
+      height: 380px;
+      background: radial-gradient(circle, rgba(245, 158, 11, 0.22) 0%, rgba(245, 158, 11, 0.05) 50%, transparent 75%);
+      filter: blur(28px);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .device-mockup-img {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 280px;
+      height: auto;
+      filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.8)) drop-shadow(0 0 20px rgba(245, 158, 11, 0.2));
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease;
+      animation: floatDevice 6s ease-in-out infinite;
+    }
+
+    .device-mockup-img:hover {
+      transform: translateY(-8px) scale(1.02);
+      filter: drop-shadow(0 28px 50px rgba(0, 0, 0, 0.9)) drop-shadow(0 0 30px rgba(245, 158, 11, 0.35));
+    }
+
+    @keyframes floatDevice {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    .app-header-meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      text-align: left;
+      padding-top: 12px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .app-mini-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      border: 1.5px solid rgba(245, 158, 11, 0.6);
+      box-shadow: 0 4px 14px rgba(245, 158, 11, 0.25);
     }
 
     .app-icon-placeholder {
@@ -334,7 +400,7 @@
 
     .blog-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 24px;
     }
 
@@ -446,8 +512,114 @@
       }
       .app-card {
         grid-template-columns: 1fr;
-        padding: 32px;
+        padding: 32px 24px;
         gap: 32px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      header {
+        padding: 16px 0;
+      }
+      nav {
+        flex-direction: column;
+        gap: 14px;
+        align-items: center;
+      }
+      .nav-links {
+        gap: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .nav-links a {
+        font-size: 0.88rem;
+      }
+      .hero {
+        padding: 44px 0 28px;
+      }
+      .hero h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+      }
+      .hero p {
+        font-size: 1.05rem;
+        margin-bottom: 24px;
+      }
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+        gap: 16px;
+      }
+      .footer-links {
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 16px;
+      }
+      .hero h1 {
+        font-size: 1.75rem;
+      }
+      .badge {
+        font-size: 0.78rem;
+        padding: 5px 12px;
+        margin-bottom: 16px;
+      }
+      .app-card {
+        padding: 24px 16px;
+        border-radius: 20px;
+        gap: 24px;
+      }
+      .app-preview-box {
+        padding: 24px 12px 18px;
+        border-radius: 18px;
+      }
+      .device-mockup-img {
+        max-width: 230px;
+      }
+      .app-info h3 {
+        font-size: 1.75rem;
+      }
+      .app-tagline {
+        font-size: 1rem;
+      }
+      .app-desc {
+        font-size: 0.95rem;
+      }
+      .feature-list li {
+        font-size: 0.9rem;
+      }
+      .app-links {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 14px;
+      }
+      .app-links .btn {
+        width: 100%;
+        justify-content: center;
+        padding: 14px 20px;
+      }
+      .app-links .legal-link {
+        text-align: center;
+        display: inline-block;
+        padding: 4px 0;
+      }
+      .blog-card {
+        padding: 22px 16px;
+        border-radius: 14px;
+      }
+      .blog-card h3 {
+        font-size: 1.15rem;
+      }
+      .about-box {
+        padding: 24px 18px;
+        border-radius: 18px;
+      }
+      .about-box h2 {
+        font-size: 1.45rem;
       }
     }
   </style>
@@ -463,9 +635,10 @@
           TKM<span>SOFT</span>
         </a>
         <ul class="nav-links">
-          <li><a href="#apps">Games</a></li>
-          <li><a href="#devlog">DevLog</a></li>
-          <li><a href="#about">About</a></li>
+          <li><a href="#apps">Flagship</a></li>
+          <li><a href="projects.html">All Projects</a></li>
+          <li><a href="#devlog">Lab Notes</a></li>
+          <li><a href="#about">Philosophy</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -476,14 +649,14 @@
     <!-- Hero Section -->
     <section class="hero">
       <div class="container">
-        <span class="badge">Independent Game & Software Studio</span>
-        <h1>Crafting Immersive Android Games & High-Performance Experiences</h1>
+        <span class="badge">Boutique Independent Game Lab</span>
+        <h1>Digital Craft That Respects Your Time & Attention</h1>
         <p>
-          Founded by Burkan Emre Tokman. Focusing on retention-first mobile gameplay, responsive game feel, and zero-compromise engineering.
+          Founded by Burkan Emre Tokman. Beyond the noise and dopamine traps of modern mobile gaming, we hand-craft quiet, tactile experiences designed to give your mind a restful space to breathe.
         </p>
         <div class="hero-actions">
-          <a href="#apps" class="btn btn-primary">Discover WordMind</a>
-          <a href="#devlog" class="btn btn-secondary">Read Engineering Insights</a>
+          <a href="#apps" class="btn btn-primary">Discover WordMind &rarr;</a>
+          <a href="#about" class="btn btn-secondary">Studio Philosophy</a>
         </div>
       </div>
     </section>
@@ -492,30 +665,40 @@
     <section id="apps" class="showcase">
       <div class="container">
         <div class="section-header">
-          <h2>Featured Releases</h2>
-          <p>Hand-crafted mobile experiences powered by modern architecture.</p>
+          <h2>Featured Release</h2>
+          <p>A serene sanctuary carved out of the day's commotion.</p>
         </div>
 
         <div class="app-card">
           <div class="app-preview-box">
-            <div class="app-icon-placeholder">🧠</div>
-            <div class="app-status">Available on Google Play</div>
-            <h4>WordMind</h4>
-            <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 4px;">v2.2.2 (Target SDK 36)</p>
+            <div class="device-showcase-wrapper">
+              <div class="device-ambient-glow"></div>
+              <img src="assets/wordmind-phone-mockup.png" alt="WordMind 3D Obsidian Luxury Device" class="device-mockup-img">
+            </div>
+            <div class="app-header-meta">
+              <img src="assets/wordmind-icon.png" alt="WordMind App Icon" class="app-mini-icon">
+              <div>
+                <h4 style="font-size: 1.15rem; margin-bottom: 2px;">WordMind</h4>
+                <div class="app-status" style="margin-bottom: 0;">Available on Google Play</div>
+              </div>
+            </div>
           </div>
 
           <div class="app-info">
             <h3>WordMind</h3>
-            <div class="app-tagline">3D Soft Glossy Luxury Crossword & Brain Challenge</div>
+            <div class="app-tagline">A Quiet Sanctuary for the Mind in a Noisy World</div>
             <p class="app-desc">
-              WordMind blends elegant obsidian-glass aesthetics with rewarding crossword mechanics. Designed with low-latency touch feedback, progressive difficulty, and deep card-album collection systems.
+              Put on your headphones and leave the rush of the world behind. The gentle glide of obsidian glass beneath your fingertips and the satisfying chime of every discovered word are crafted to offer a mindful, fifteen-minute escape in the middle of your day.
             </p>
             <ul class="feature-list">
-              <li>Soft Glossy 3D visual language with 24K gold highlights</li>
-              <li>100% Local-first data architecture (instant offline play)</li>
-              <li>Zero banner clutter: purely optional rewarded gameplay boosts</li>
-              <li>Full 16 KB page size & Android Vitals performance optimization</li>
+              <li><strong>Zero Advertising Noise:</strong> No intrusive pop-up interruptions, synthetic timers, or predatory traps. Your flow of thought remains sacred.</li>
+              <li><strong>Unbroken Calm:</strong> Commuting on the subway or up in the clouds, enjoy seamless play without an internet connection, always at your own tempo.</li>
+              <li><strong>Frictionless Tactile Flow:</strong> An instantaneous touch response with zero latency—an understated sensory pleasure for your fingertips.</li>
+              <li><strong>Night Obsidian & 24K Gold:</strong> A restful dark aesthetic that calms your eyes, accented by polished gold highlights whenever a puzzle unfolds.</li>
             </ul>
+            <p style="color: var(--accent-gold); font-size: 0.95rem; margin-bottom: 24px; font-style: italic; background: rgba(245, 158, 11, 0.08); padding: 12px 18px; border-radius: 10px; border-left: 3px solid var(--accent-gold);">
+              ☕ Best enjoyed with a fresh cup of coffee during your quiet hours of the day.
+            </p>
             <div class="app-links">
               <a href="https://play.google.com/store/apps/details?id=com.tkmsoft.crosswordpuzzle" target="_blank" rel="noopener" class="btn btn-primary">
                 Get on Google Play &rarr;
@@ -525,6 +708,16 @@
             </div>
           </div>
         </div>
+
+        <!-- Ecosystem Invitation Banner -->
+        <div style="margin-top: 32px; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 20px; padding: 28px 36px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+          <div>
+            <div style="color: var(--accent-gold); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px;">The Studio Ecosystem</div>
+            <h4 style="font-size: 1.25rem; font-weight: 700; color: #FFFFFF;">Explore All Production Games & R&D Prototypes</h4>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 2px;">Discover high-velocity cyber action in Marble Myth alongside upcoming laboratory experiments.</p>
+          </div>
+          <a href="projects.html" class="btn btn-secondary" style="border-color: rgba(245, 158, 11, 0.4); color: var(--accent-gold);">Explore All Projects &rarr;</a>
+        </div>
       </div>
     </section>
 
@@ -532,36 +725,36 @@
     <section id="devlog" class="devlog">
       <div class="container">
         <div class="section-header">
-          <h2>Engineering & Design Insights</h2>
-          <p>Reflections on game feel, mobile monetization, and clean architecture.</p>
+          <h2>Lab Notes & Reflections</h2>
+          <p>Essays on game feel, human-centered design, and digital serenity.</p>
         </div>
 
         <div class="blog-grid">
           <div class="blog-card">
             <div>
-              <div class="blog-meta">Game Feel & Performance</div>
-              <h3>Zero-Latency Haptics & SoundPool in Android Games</h3>
-              <p>Why sub-50ms audio responsiveness and spring physics dictate D1 player retention far more than marketing spend.</p>
+              <div class="blog-meta">Sensory Craft & Acoustics</div>
+              <h3>The Peace in the Sound of Words: Why Every Touch Should Feel Like an Instrument</h3>
+              <p>A design reflection on how a sub-millisecond tactile click and acoustic harmony dissolve cognitive fatigue.</p>
             </div>
-            <span class="read-more">DevLog #01 &rarr;</span>
+            <span class="read-more">Read Note &rarr;</span>
           </div>
 
           <div class="blog-card">
             <div>
-              <div class="blog-meta">Mobile Economy & Growth</div>
-              <h3>Why We Eliminated Banner Ads in WordMind</h3>
-              <p>A deep dive into why rewarded video integration with cooldown timers delivers higher LTV and protects long-term engagement.</p>
+              <div class="blog-meta">Against the Attention Economy</div>
+              <h3>Quiet Screens: Why We Eliminated Banner Ads in WordMind</h3>
+              <p>Is an ethical mobile gaming world possible without flashing banners and artificial countdowns?</p>
             </div>
-            <span class="read-more">DevLog #02 &rarr;</span>
+            <span class="read-more">Read Note &rarr;</span>
           </div>
 
           <div class="blog-card">
             <div>
-              <div class="blog-meta">Architecture & Privacy</div>
-              <h3>Local-First Architecture: Zero Server, Zero Data Liability</h3>
-              <p>How storing game progression strictly on-device simplifies compliance, boosts privacy, and delivers lightning-fast cold starts.</p>
+              <div class="blog-meta">Privacy & Sanctuary</div>
+              <h3>Your Device Is Your Sanctuary: Zero Tracking, Pure Freedom</h3>
+              <p>You should not have to trade your personal privacy to solve a puzzle. An offline, respectful architectural stance.</p>
             </div>
-            <span class="read-more">DevLog #03 &rarr;</span>
+            <span class="read-more">Read Note &rarr;</span>
           </div>
         </div>
       </div>
@@ -571,12 +764,12 @@
     <section id="about" class="about">
       <div class="container">
         <div class="about-box">
-          <h2>About TKM Soft & Philosophy</h2>
+          <h2>About TKM Soft & Our Philosophy</h2>
           <p>
-            I'm <strong>Burkan Emre Tokman</strong>, an independent software engineer and game developer. Under the TKM Soft brand, my mission is to build digital products that respect the user’s time, attention, and privacy.
+            I am <strong>Burkan Emre Tokman</strong>. Under the banner of TKM Soft, far away from mass-production mobile factories, I develop independent games where every single pixel, haptic pulse, and typographic curve is treated with artisan care.
           </p>
           <p>
-            Every project begins with a <em>retention-first</em> mindset: no predatory monetization, no aggressive banners, and zero personal data hoarding. The goal is simple — ship clean, performant, and memorable software.
+            At the heart of every project lies a singular commitment: <strong>to honor your mind, attention, and time.</strong> No predatory monetization, no aggressive data collection. The vision is simple — to open a quiet, elegant, and genuinely enjoyable space in your everyday routine.
           </p>
         </div>
       </div>
@@ -588,12 +781,12 @@
     <div class="container">
       <div class="footer-inner">
         <div>
-          <strong>TKM Soft</strong> &bull; Founded by Burkan Emre Tokman
-          <div style="font-size: 0.85rem; margin-top: 4px;">Contact: <a href="mailto:burkanemretokman@gmail.com" style="color: var(--accent-gold); text-decoration: none;">burkanemretokman@gmail.com</a></div>
+          <strong>TKM Soft</strong> &bull; Burkan Emre Tokman
+          <div style="font-size: 0.85rem; margin-top: 4px;">Contact & Support: <a href="mailto:burkanemretokman@gmail.com" style="color: var(--accent-gold); text-decoration: none;">burkanemretokman@gmail.com</a></div>
         </div>
         <div class="footer-links">
-          <a href="wordmind-privacy.html">WordMind Privacy</a>
-          <a href="wordmind-terms.html">WordMind Terms</a>
+          <a href="wordmind-privacy.html">Privacy Policy</a>
+          <a href="wordmind-terms.html">Terms of Service</a>
           <a href="app-ads.txt">app-ads.txt</a>
         </div>
       </div>
