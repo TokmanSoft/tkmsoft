@@ -21,6 +21,7 @@
       --emerald: #10B981;
       --accent-teal: #14B8A6;
       --accent-cobalt: #2563EB;
+      --accent-jade: #10B981;
       --container-width: 1100px;
     }
 
@@ -268,6 +269,18 @@
       pointer-events: none;
     }
 
+    .glow-jade {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 260px;
+      height: 380px;
+      background: radial-gradient(circle, rgba(16, 185, 129, 0.28) 0%, rgba(245, 158, 11, 0.12) 50%, transparent 75%);
+      filter: blur(28px);
+      pointer-events: none;
+    }
+
     .device-img {
       position: relative;
       z-index: 1;
@@ -326,6 +339,11 @@
       box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
     }
 
+    .app-icon.jade-border {
+      border-color: var(--accent-jade);
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.35);
+    }
+
     .status-tag {
       display: inline-flex;
       align-items: center;
@@ -362,6 +380,7 @@
     .card-tagline.emerald { color: var(--emerald); }
     .card-tagline.teal { color: var(--accent-teal); }
     .card-tagline.cobalt { color: var(--accent-cobalt); }
+    .card-tagline.jade { color: var(--accent-jade); }
 
     .card-desc {
       color: var(--text-muted);
@@ -424,6 +443,12 @@
       color: var(--accent-cobalt);
       background: rgba(37, 99, 235, 0.08);
       border-left: 3px solid var(--accent-cobalt);
+    }
+
+    .ritual-box.jade {
+      color: var(--accent-jade);
+      background: rgba(16, 185, 129, 0.08);
+      border-left: 3px solid var(--accent-jade);
     }
 
     .card-actions {
@@ -499,6 +524,17 @@
     .btn-cobalt:hover {
       transform: translateY(-2px);
       box-shadow: 0 6px 24px rgba(37, 99, 235, 0.5);
+    }
+
+    .btn-jade {
+      background: linear-gradient(135deg, #10B981 0%, #047857 100%);
+      color: #FFFFFF;
+      box-shadow: 0 4px 20px rgba(16, 185, 129, 0.35);
+    }
+
+    .btn-jade:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(16, 185, 129, 0.5);
     }
 
     .legal-link {
@@ -930,6 +966,47 @@
               </a>
               <a href="pdftoimage-privacy.html" class="legal-link">Privacy Policy</a>
               <a href="pdftoimage-terms.html" class="legal-link">Terms of Service</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Tesbihmatik -->
+        <div class="project-card">
+          <div class="preview-box">
+            <div class="device-wrapper">
+              <div class="glow-jade"></div>
+              <img src="assets/tesbihmatik-phone-mockup.png" alt="Tesbihmatik Tactile Spiritual Sanctuary Cockpit Device" class="device-img">
+            </div>
+            <div class="card-meta-bar">
+              <img src="assets/tesbihmatik-icon.png" alt="Tesbihmatik App Icon" class="app-icon jade-border">
+              <div>
+                <h4 style="font-size: 1.15rem; margin-bottom: 2px;">Tesbihmatik</h4>
+                <div class="status-tag">Available on Google Play</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-info">
+            <h3>Tesbihmatik</h3>
+            <div class="card-tagline jade">A Tactile Spiritual Sanctuary, 100% Ad-Free</div>
+            <p class="card-desc">
+              Designed for mindful contemplation and spiritual clarity. Tesbihmatik pairs authentic acoustic bead acoustics with linear resonant haptics, transforming everyday repetition into an unbroken state of presence and peace.
+            </p>
+            <ul class="feature-list">
+              <li><strong>100% Ad-Free Sanctity:</strong> Pure spiritual focus with zero commercial interruptions, zero banner ads, and zero paywalls. Forever non-profit.</li>
+              <li><strong>Tactile Spring Dial:</strong> Precision LRA haptic feedback and acoustic SoundPool bead snaps simulate physical tasbih beads with zero audio latency.</li>
+              <li><strong>Instant Home Widget:</strong> Seamlessly track and log daily dhikr milestones directly from your Android home screen without launching the full app.</li>
+              <li><strong>Private & On-Device:</strong> 100% local DataStore persistence. Your personal reflections, streaks, and prayers remain solely on your device.</li>
+            </ul>
+            <div class="ritual-box jade">
+              🕊️ An evening ritual: winding down in OLED dark mode with acoustic bead clicks guiding quiet contemplation.
+            </div>
+            <div class="card-actions">
+              <a href="https://play.google.com/store/apps/details?id=com.tkmsoft.tesbihmatik" target="_blank" rel="noopener" class="btn btn-jade">
+                Get on Google Play &rarr;
+              </a>
+              <a href="tesbihmatik-privacy.html" class="legal-link">Privacy Policy</a>
+              <a href="tesbihmatik-terms.html" class="legal-link">Terms of Service</a>
             </div>
           </div>
         </div>
