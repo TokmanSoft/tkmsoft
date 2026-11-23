@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noai, noimageai" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
   <title>MatFlow - Privacy Policy | TKM Soft</title>
   <meta
     name="description"
@@ -217,18 +219,18 @@
         <strong>Application:</strong> MatFlow: Stock & Recipe Cockpit (<code>com.tkmsoft.matflow</code>)<br />
         <strong>Developer:</strong> TKM Soft (Burkan Emre Tokman)<br />
         <strong>Contact:</strong> <a href="mailto:burkanemretokman@gmail.com">burkanemretokman@gmail.com</a><br />
-        <strong>Effective Date:</strong> November 5, 2026<br />
-        <strong>Target SDK:</strong> Android 15 (API 36) | Strict TLS Cleartext Prohibition
+        <strong>Effective Date:</strong> November 5, 2026 | <strong>Last Updated:</strong> November 2026<br />
+        <strong>Architecture:</strong> Local-First • Strict Encrypted Transit
       </div>
 
       <div class="highlight-box">
-        <p><strong>Core Sovereign Privacy Promise:</strong> MatFlow is built on a strict <em>Local-First Architecture</em>. All your proprietary material formulas, secret recipe ratios, pricing structures, and inventory tallies are saved exclusively in your device's local database. TKM Soft maintains no central database servers and has zero visibility into your trade secrets or workshop inventory.</p>
+        <p><strong>Core Sovereign Privacy Promise:</strong> MatFlow is built on a strict <em>Local-First Architecture</em>. All your proprietary material formulas, secret recipe ratios, pricing structures, and inventory tallies are saved exclusively on your device. TKM Soft maintains no central database servers and has zero visibility into your trade secrets or workshop inventory.</p>
       </div>
 
       <h2>1. Architecture & Data Storage Model</h2>
       <p>MatFlow is engineered as an offline-first artisan productivity tool:</p>
       <ul>
-        <li><strong>Local SQLite Room Database:</strong> All raw materials, recipe hierarchies, stock movements, and batch production histories are stored locally inside the application sandbox (<code>matflow_database</code>). This data never transfers to TKM Soft.</li>
+        <li><strong>Local On-Device Storage:</strong> All raw materials, recipe hierarchies, stock movements, and batch production histories are stored locally inside the application sandbox. This data never transfers to TKM Soft.</li>
         <li><strong>Optional Google Drive Cloud Backup:</strong> MatFlow allows users to voluntarily connect their own personal Google Drive account to backup and restore encrypted database snapshots. These files reside exclusively in your personal Google Drive (AppData folder) and are protected by your Google account credentials. TKM Soft never accesses, copies, or views your Google Drive backup files.</li>
         <li><strong>Zero Account Requirement:</strong> MatFlow requires no email registration, username, or cloud password to manage recipes or stock.</li>
       </ul>
@@ -252,13 +254,13 @@
           </tr>
           <tr>
             <td><code>android.permission.POST_NOTIFICATIONS</code></td>
-            <td>Runtime (API 33+)</td>
+            <td>Runtime</td>
             <td>Used exclusively to deliver timely, user-requested warnings when material stock falls below custom critical thresholds, and to confirm background backup completions. Users may disable notifications at any time in system settings.</td>
           </tr>
           <tr>
             <td><code>android.permission.RECEIVE_BOOT_COMPLETED</code></td>
             <td>Normal</td>
-            <td>Allows WorkManager to reschedule periodic local background stock safety checks and automated backup routines after device reboot.</td>
+            <td>Allows the app to reschedule periodic local background stock safety checks and automated backup routines after device reboot.</td>
           </tr>
           <tr>
             <td><code>com.android.vending.BILLING</code></td>
@@ -270,20 +272,20 @@
       </div>
 
       <h2>3. Third-Party Services & Telemetry</h2>
-      <p>To provide optional monetization, secure digital transactions, and Google Play Android Vitals compliance, MatFlow integrates the following verified Google developer SDKs:</p>
+      <p>To provide optional monetization, secure digital transactions, and app stability, MatFlow integrates the following verified Google services:</p>
       <ul>
-        <li><strong>Google Play In-App Billing:</strong> Handles transactions for the optional "MatFlow Pro" license (<code>matflow_pro</code>). All payment credentials and financial transactions are securely managed by Google. TKM Soft never accesses or stores credit card numbers, bank accounts, or billing addresses.</li>
+        <li><strong>Google Play In-App Billing:</strong> Handles transactions for the optional "MatFlow Pro" license. All payment credentials and financial transactions are securely managed by Google. TKM Soft never accesses or stores credit card numbers, bank accounts, or billing addresses.</li>
         <li><strong>Google AdMob (Rewarded Video Only):</strong> MatFlow strictly prohibits disruptive banner ads or forced popups. Rewarded video advertisements are offered purely on a voluntary basis to grant temporary bonus material or export allowances in the free tier. AdMob may process device identifiers (such as the standard Android Advertising ID - <code>AD_ID</code>) and diagnostic signals in accordance with the <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">Google Advertising Privacy Policy</a>.</li>
-        <li><strong>Firebase Analytics & Crashlytics:</strong> Collects aggregated, non-personally identifiable diagnostic events, app performance metrics, and stack traces to maintain our 99.9%+ crash-free stability target. No recipe data, material names, or business values are ever included in diagnostic logs.</li>
+        <li><strong>Firebase Analytics & Crashlytics:</strong> Collects aggregated, non-personally identifiable diagnostic events, app performance metrics, and crash diagnostics to maintain stability. No recipe data, material names, or business values are ever included in diagnostic logs.</li>
         <li><strong>Google Drive API:</strong> If you explicitly initiate a cloud backup, the official Google Drive client library establishes an authenticated connection directly between your device and Google's servers. TKM Soft acts solely as client software and holds no intermediary servers.</li>
       </ul>
 
       <h2>4. Data Retention, Export & Complete Destruction</h2>
       <p>We believe in absolute user data sovereignty:</p>
       <ul>
-        <li><strong>Local Data Deletion:</strong> You can completely and irreversibly wipe all inventory records, custom recipes, and batch histories at any moment by using the in-app "Reset Database" option or clearing app storage in Android Settings. Uninstalling MatFlow removes all local SQLite data immediately.</li>
+        <li><strong>Local Data Deletion:</strong> You can completely and irreversibly wipe all inventory records, custom recipes, and batch histories at any moment by using the in-app "Reset Database" option or clearing app storage in Android Settings. Uninstalling MatFlow removes all local data immediately.</li>
         <li><strong>Cloud Backup Destruction:</strong> If you created Google Drive backups, you retain total ownership. You can permanently delete the backup archive directly through Google Drive or revoke MatFlow's access via your <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">Google Account Security Permissions</a>.</li>
-        <li><strong>CSV Export:</strong> You can export your inventory and production logs to standard CSV files at any time via Android FileProvider for external backup or migration.</li>
+        <li><strong>CSV Export:</strong> You can export your inventory and production logs to standard CSV files at any time for external backup or migration.</li>
       </ul>
 
       <h2>5. Children's Privacy</h2>
@@ -300,8 +302,8 @@
       <h2>7. Security Safeguards</h2>
       <p>MatFlow enforces enterprise-grade application security:</p>
       <ul>
-        <li><strong>Strict Transport Security:</strong> Cleartext HTTP traffic is completely prohibited (<code>usesCleartextTraffic="false"</code>). All network communications with Google APIs use TLS 1.3 encryption.</li>
-        <li><strong>R8/ProGuard Code Hardening:</strong> Production builds undergo rigorous R8 obfuscation and resource shrinking to protect internal database schemas and security boundaries from tampering.</li>
+        <li><strong>Strict Transport Security:</strong> Unencrypted HTTP traffic is prohibited. All network communications with Google services use modern transport encryption.</li>
+        <li><strong>Application Security Hardening:</strong> Production builds undergo industry-standard code protection and anti-tamper safeguards to protect your data and application integrity.</li>
       </ul>
 
       <h2>8. Policy Updates & Contact</h2>
